@@ -1,0 +1,6 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting certifi
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ba/06/a07f096c664aeb9f01624f858c3add0a4e913d6c96257acb4fce61e7de14/certifi-2024.2.2-py3-none-any.whl (163 kB)
+     ------------------------------------ 163.8/163.8 kB 446.3 kB/s eta 0:00:00
+Installing collected packages: certifi
+Successfully installed certifi-2024.2.2
