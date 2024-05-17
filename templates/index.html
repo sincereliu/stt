@@ -149,8 +149,8 @@
         <div class="layui-upload-drag layui-border-green" id="upload">
           <i class="layui-icon layui-icon-upload layui-font-green"></i>
           <div
-            data-cn="点击上传，或将音频视频文件拖拽到此处(wav,mp3,flac,mp4,mov,mkv,avi,mpeg)"
-            data-en="click to upload or drag video or audio to here(wav,mp3,flac,mp4,mov,mkv,avi,mpeg)"
+            data-cn="点击上传，或将音频视频文件拖拽到此处(wav,mp3,flac,mp4,mov,mkv,avi,mpeg,webm)"
+            data-en="click to upload or drag video or audio to here(wav,mp3,flac,mp4,mov,mkv,avi,mpeg,webm)"
           ></div>
           <div class="layui-hide my-1" id="preview">
             <div class="preview-scroll"></div>
@@ -424,7 +424,7 @@
           elem: "#upload",
           field: "audio",
           accept: "file",
-          exts: "mp4|mp3|flac|wav|avi|mkv|mpeg|mov",
+          exts: "mp4|mp3|flac|wav|avi|mkv|mpeg|mov|webm",
           multiple: true,
           url: "/upload", // 实际使用时改成您自己的上传接口即可。
           choose: function () {
