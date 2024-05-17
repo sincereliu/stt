@@ -1,7 +1,6 @@
 import locale
 import os
 import sys
-import torch
 import re
 ROOT_DIR = os.getcwd()
 

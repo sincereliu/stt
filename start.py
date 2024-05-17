@@ -25,7 +25,7 @@ class CustomRequestHandler(WSGIHandler):
 log = logging.getLogger('werkzeug')
 log.handlers[:] = []
 log.setLevel(logging.WARNING)
-app = Flask(__name__, static_folder=os.path.join(ROOT_DIR, 'static'), static_url_path='/static',  template_folder=os.path.join(ROOT_DIR, 'templates'))
+app = Flask(__name__)
 root_log = logging.getLogger()  # Flask的根日志记录器
 root_log.handlers = []
 root_log.setLevel(logging.WARNING)

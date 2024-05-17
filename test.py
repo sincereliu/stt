@@ -6,10 +6,20 @@ import requests
 url = "http://127.0.0.1:9977/api"
 # 请求参数  file:音视频文件，language：语言代码，model：模型，response_format:text|json|srt
 # 返回 code==0 成功，其他失败，msg==成功为ok，其他失败原因，data=识别后返回文字
-files = {"file": open("C:\\Users\\c1\\Videos\\2.wav", "rb")}
+files = {"file": open(r'D:\mycode\stt\static\tmp\2.wav', "rb")}
 data={"language":"zh","model":"base","response_format":"json"}
-response = requests.request("POST", url, timeout=600, data=data,files=files)
-print(response.json())
+try:
+    response = requests.post(url, timeout=600, data=data, files=files)
+    response.raise_for_status()  # 检查请求是否成功
+    try:
+        json_response = response.json()
+        print(json_response)
+    except requests.exceptions.JSONDecodeError:
+        print("响应不是有效的 JSON 格式：", response.text)
+except requests.exceptions.RequestException as e:
+    print(f"请求失败：{e}")
+finally:
+    files['file'].close()  # 确保文件被关闭
 '''
 response
 {'code': 0, 'data': [{'end_time': '00:00:16,000', 'line': 1, 'start_time': '00:00:00,000', 'text': '在后面的做,本期我们介绍电磁罚的公园里'}, {'end_
